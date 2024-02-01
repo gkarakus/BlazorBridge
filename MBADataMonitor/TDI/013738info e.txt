@@ -1,0 +1,44 @@
+https://e-verify.uscis.gov/
+GAILS
+username : GWIC5148
+Password : Thisnotyet1!
+
+
+MY Regular site
+
+username : GKAR1691
+Pass : Mbakafa1500$
+
+
+STAGE https://stage.e-verify.uscis.gov/web
+
+username: GKAR1040
+Pass: Kafa$1500s
+
+
+Company ID: 113169
+Web Service User ID: MBAVTEST
+pass: Para!75gelsin
+
+
+The web services access method requires an employer to develop software that interfaces with E-Verify to create and manage cases. The employer’s software should extract data from its existing system or an electronic Form I-9 and transmit the information to E-Verify. Employers who choose this option receive a web services Interface Control Agreement (ICA) which contains the information used to develop and test the software interface. Both employers and E Verify employer agents can use this access method.
+
+Soap MAin 
+https://stage-everify.uscis.gov/api/v30/soap/cases/wsdl
+
+
+https://stage-everify.uscis.gov/api/v30/REST/cases/wsdl
+
+
+https://e-verify.uscis.gov/web/Login.aspx
+
+https://stage-everify.uscis.gov/api/v30/swagger-api/swagger.json
+
+
+Number to Call : 888 464 4218  ANgel: She Have no idea.    she provider: e-verify-newaccount@uscis.dhs.gov.
+
+
+:     need send email for Stage API use access:    
+
+
+     VISWebServices.E-Verify@uscis.dhs.gov.

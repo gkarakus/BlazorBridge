@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://FSVWebServices/FSVRemote/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://FSVWebServices/FSVRemote/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://FSVWebServices/FSVRemote/">
+      <s:element name="Transact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paramstr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TransactSoapIn">
+    <wsdl:part name="parameters" element="tns:Transact" />
+  </wsdl:message>
+  <wsdl:message name="TransactSoapOut">
+    <wsdl:part name="parameters" element="tns:TransactResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FsvRemoteServiceSoap">
+    <wsdl:operation name="Transact">
+      <wsdl:input message="tns:TransactSoapIn" />
+      <wsdl:output message="tns:TransactSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FsvRemoteServiceSoap12" type="tns:FsvRemoteServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transact">
+      <soap12:operation soapAction="http://FSVWebServices/FSVRemote/Transact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FsvRemoteServiceSoap" type="tns:FsvRemoteServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transact">
+      <soap:operation soapAction="http://FSVWebServices/FSVRemote/Transact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FsvRemoteService">
+    <wsdl:port name="FsvRemoteServiceSoap" binding="tns:FsvRemoteServiceSoap">
+      <soap:address location="https://sp.clientaccesssite.com/fsvremote///services/fsvremote" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
